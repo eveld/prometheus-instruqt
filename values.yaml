@@ -1055,7 +1055,7 @@ serverFiles:
         relabel_configs:
           - action: labelmap
             regex: __meta_kubernetes_node_label_(.+)
-          - source_labels: [__meta_kubernetes_node_internalIP, __meta_kubernetes_endpoint_port]
+          - source_labels: [__meta_kubernetes_node_address_InternalIP, __meta_kubernetes_endpoint_port]
             action: replace
             target_label: __address__
             regex: ([^:]+)(?::\d+)?;(\d+)
